@@ -18,7 +18,7 @@ class Options extends Component {
 
     render() {
         return (
-            <div className="Options container">
+            <div className="Options container FadeInQuick">
                 <div className="form-check">
                     <input className="form-check-input" type="checkbox" id="hideClock" onChange={this.hideClock} checked={this.props.isClockHidden} ></input>
                     <label className="form-check-label" htmlFor="hideClock">

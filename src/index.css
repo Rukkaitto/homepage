@@ -1,5 +1,6 @@
 :root {
   font-size: 24px;
+  --transparent-black: rgba(0, 0, 0, 0.4);
 }
 
 body {
@@ -26,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  text-shadow: 2px 2px 8px #000000cc;
+  text-shadow: 2px 2px 8px #000000aa;
 }
 
 .App {
@@ -38,7 +39,7 @@ body {
 }
 
 .Date {
-  font-size: 1em;
+  font-size: 1.1em;
 }
 
 .Options {
@@ -48,7 +49,7 @@ body {
   left: 6rem;
   font-size: .7em;
   width: fit-content;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--transparent-black);
   z-index: 2;
   padding: .5rem;
   border-radius: .5rem;
@@ -61,11 +62,12 @@ body {
   z-index: 1;
   font-size: .8em;
   padding: .2rem .4rem;
+  background-color: var(--transparent-black);
 }
 
 .ClockAndDate {
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--transparent-black);
   border-radius: .8rem;
   min-width: 30%;
 }
@@ -75,12 +77,16 @@ body {
   z-index: 1;
   bottom: 1rem;
   right: 2rem;
-  font-size: 5em;
+  font-size: 3em;
   text-decoration: none;
   display: flex;
   flex-direction: row;
-  width: 15%;
+  width: 8rem;
   justify-content: space-between;
+}
+
+.Arrow {
+  transition: transform .2s;
 }
 
 .Arrow:link {
@@ -96,9 +102,46 @@ body {
 .Arrow:hover {
   text-decoration: none;
   color: white;
+  transform: scale(1.1);
 }
 
 .Arrow:active {
   text-decoration: none;
   color: white;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
+}
+
+.FadeIn {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  white-space: nowrap;
+}
+
+.FadeInQuick {
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: .3s;
+  animation-timing-function: ease;
+  white-space: nowrap;
+}
+
+.FirstToFadeIn {
+  animation-delay: 0.3s;
+}
+
+.SecondToFadeIn {
+  animation-delay: 0.8s;
 }
